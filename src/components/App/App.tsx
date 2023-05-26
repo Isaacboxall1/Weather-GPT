@@ -107,17 +107,17 @@ interface Alert {
 
 function App() {
   const [weatherInfo, setWeatherInfo] = useState<null | Weather>(null)
-  const [weatherRequest, setWeatherRequest] = useState<string>(`https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=0.12&units=metric&APPID=`)
+  const [weatherRequest, setWeatherRequest] = useState<string>(`https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=0.12&units=metric&APPID=efa9eb714e99dea85cbbc513ed918f41`)
   const [locationName, setLocationName] = useState<string>('London')
 
   async function updateRequest(locationName: string) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=efa9eb714e99dea85cbbc513ed918f41`)
     .then(data => data.json())
     .then(data => {
       setLocationName(data.name)
       return data;
   })
-    .then(data => (setWeatherRequest(`https://api.openweathermap.org/data/3.0/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=metric&APPID=`)))
+    .then(data => (setWeatherRequest(`https://api.openweathermap.org/data/3.0/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=metric&APPID=efa9eb714e99dea85cbbc513ed918f41`)))
   }
 
   useEffect(() => {

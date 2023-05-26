@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+## Weather-GPT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
 
-## Available Scripts
+Weather-GPT is a Weather Application built using the openWeatherMap API, which integrates the functionality
+of Chat-GPT, using the Open-AI API, to suggest the best clothes to wear, and things to do, in a given location
+based on the weather for that day.
 
-In the project directory, you can run:
+The App allows searching of local weather based on City names for over 200,000 cities, and provides current weather
+as well as both an 8 hour, and 5 day forecast. 
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone this repo to your local device
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Use 'npm install' to install all dependencies for this project
 
-### `npm test`
+3. You will need to set up a .ENV file for this project to store your own Open AI, and openWeatherMap API keys.
+ Use the environment names REACT_APP_WEATHER_API_KEY and REACT_APP_OPENAI_KEY to store these environment variables
+(keys for these APIs can be obtained from https://home.openweathermap.org/ and https://platform.openai.com/overview respectively)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Once you have your dependencies installed and environment variables set up, use 'npm start' to run the project locally on your device.
 
-### `npm run build`
+## Dev Notes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# To-Do
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. impliment the Open AI api and feed information about the current location from the weather api to suggest activities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. build display components for the Open AI elements to be displayed on the dashboard
 
-### `npm run eject`
+3. add unit tests and integration tests for the application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. impliment the Recharts react library to display temperature information in graph format
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. add a map to the dashboard to display the location of the city searched for
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+6. add a search history to the dashboard to allow users to quickly search for previously searched cities
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+7. add a favourites list to the dashboard to allow users to save their favourite cities
 
-## Learn More
+8. add a settings page to the dashboard to allow users to change the theme of the application and units of measurement
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Completed
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. build the basic dashboard for the application
+
+2. build the basic search functionality for the application
+
+3. build the basic weather display functionality for the application
+
+4. build the basic 8 hour forecast functionality for the application
+
+5. build the basic 5 day forecast functionality for the application
+
+# Known Bugs
+
+1. The search bar does not clear after a search is made, and the user must manually clear the search bar to make another search
+
+2. The search function does not work if the user presses enter, and the user must click the search button to make a search
+
+3. Very little error catching for incorrect user input is implemented, and the application will crash if the user enters incorrect input
+
+4. The application is not responsive, and will not display correctly on mobile devices
+
+
+
+
+
+
+
