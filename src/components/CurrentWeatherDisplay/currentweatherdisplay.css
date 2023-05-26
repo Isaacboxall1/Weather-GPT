@@ -1,0 +1,42 @@
+#current-weather {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 60vh;
+    width: 50vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+#image-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 40%;
+    gap: 0px;
+    line-height: 0px;
+    background-color:rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+#image-group img {
+    aspect-ratio: 1/1;
+    width: 10vw;
+}
+#image-group h2 {
+    font-size: 3rem;
+    color: white;
+}
+#sunrise {
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.6rem;
+    border-radius: 15px;
+}

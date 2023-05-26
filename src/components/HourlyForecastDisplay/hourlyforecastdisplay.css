@@ -1,0 +1,12 @@
+#hourly-forecast-grid {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem;
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
