@@ -1,5 +1,5 @@
 .App {
-  height: 300vh;
+  height: 230vh;
   width: 100vw;
   text-align: center;
   background-image: url('../../../public/blob-scene-haikei.svg');
@@ -13,21 +13,7 @@
   font-family: 'Darumadrop One', cursive;
   color: white;
 }
-/* #weather-display {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  width: 70%;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); */
 
-#title {
-  font-family: 'Rubik Puddles', cursive;
-}
 
 h1 {
   font-size: 3rem;

@@ -1,11 +1,10 @@
 // setAIresponse: (value:string)=>void
 import {Hourly} from '../App/App'
 import { timeConverter } from '../CurrentWeatherDisplay'
-
+const openAiKey = process.env.REACT_APP_OPENAI_KEY
 
 export async function callGPT(location: string, forecast: string): Promise<string> {
-
-    const message = `Given the Weather in ${location} is forecast to be ${forecast}, suggest THREE activities to do in ${location} that are appropriate for the weather. suggest specific locations.  \n\nActivities: \n\n1. \n\n2. \n\n3.`
+    const message = `Given the Weather in ${location} is forecast to be ${forecast}, suggest THREE activities to do in ${location} that are appropriate for the weather. suggest specific locations. follow the format of ActivityTitle1: description: ActivityTitle2: description: ActivityTitle3: description:`
     let apiResponse = ''
     const APIBody = {
       "model": "gpt-3.5-turbo",
@@ -18,7 +17,7 @@ export async function callGPT(location: string, forecast: string): Promise<strin
       method: 'POST',
       headers: {
       "content-type": 'application/json',
-      "Authorization": 'Bearer '
+      "Authorization": `Bearer ${openAiKey}`
       },
       body: JSON.stringify(APIBody)
     }).then((data)=> {

@@ -22,7 +22,7 @@ useEffect(()=> {updateForecast()}, [props])
 return (
     <>
     <div id="hourly-forecast-grid">
-    {hourlyForecast.length > 0 ? hourlyForecast.map(hour => <HourlyForecast {...hour}/>)  : null}
+    {hourlyForecast.length > 0 ? hourlyForecast.map((hour, i) => <HourlyForecast key={i} {...hour}/>)  : null}
     </div>
     </>
 )

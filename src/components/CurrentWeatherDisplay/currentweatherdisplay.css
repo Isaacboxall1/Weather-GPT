@@ -20,18 +20,19 @@
     justify-content: space-around;
     align-items: center;
     height: 90%;
-    width: 40%;
+    width: 30%;
     gap: 0px;
-    line-height: 0px;
     background-color:rgba(255, 255, 255, 0.2);
     border-radius: 15px;
+    padding: 1.5rem;
 }
 #image-group img {
     aspect-ratio: 1/1;
-    width: 10vw;
+    width: 6vw;
+    margin: 0;
 }
 #image-group h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
 }
 #sunrise {

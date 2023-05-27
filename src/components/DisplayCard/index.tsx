@@ -8,7 +8,7 @@ export default function DisplayCard (props: Weather) {
 
     return (
         <div id="display-card">
-        <h1>{props.locationName}</h1>
+        <h1 id="location-name">{props.locationName}</h1>
         <CurrentWeatherDisplay {...props.current}/>
         <HourlyForecastDisplay {...props.hourly}/>
         <DailyForecastDisplay {...props.daily}/>

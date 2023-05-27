@@ -6,13 +6,26 @@ interface SearchBarProps {
 }
 
 export default function SearchBar(props: SearchBarProps) {
-    const [search, setSearch] = React.useState<string>('')
-    // console.log(search)
+  const [search, setSearch] = React.useState<string>('')
+
+  const handleSubmit = () => {
+      if (search) {
+          props.updateRequest(search);
+          setSearch('');
+      }
+  }
+
   return (
-    <div id="searchbar">
-        <input type='text' placeholder='Search city' onChange={(e) => setSearch(e.target.value) } />
-        <button onClick={()=> search ? props.updateRequest(search): null}>Submit</button>
-    </div>
+      <div id="searchbar">
+          <input 
+              type='text' 
+              placeholder='Search city' 
+              value={search} 
+              onChange={(e) => setSearch(e.target.value)}
+          />
+          <button onClick={handleSubmit}>Submit</button>
+      </div>
   )
 }
+
 

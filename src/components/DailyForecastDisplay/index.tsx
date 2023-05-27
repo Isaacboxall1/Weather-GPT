@@ -24,7 +24,7 @@ useEffect (() => {updateForecast()}, [props])
 return (
     <>
     <div id="daily-forecast-grid">
-    {dailyForecast.length > 0 ? dailyForecast.map(day => <DailyForecast {...day}/>)  : null}
+    {dailyForecast.length > 0 ? dailyForecast.map((day,i) => <DailyForecast key={i} {...day}/>)  : null}
     </div>
     </>
 )

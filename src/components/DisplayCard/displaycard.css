@@ -13,7 +13,7 @@
     overflow: auto;
 }
 
-#display-card h1 {
+#location-name {
     height: 50vh;
     width:10vw;
     font-size: 7rem;

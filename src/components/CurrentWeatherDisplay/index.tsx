@@ -17,15 +17,6 @@ export function dateConverter (unixdate:number): string {
     }
 
 export default function CurrentWeatherDisplay (props: Current) {
-    console.log(props)
- const [date, setDate] = useState<string>('')
-
-    
-
-
-    useEffect(() => {
-        setDate(dateConverter(props.dt).split(',')[0])
-    }, [props.dt])
 
     return (
         <div id="current-weather">

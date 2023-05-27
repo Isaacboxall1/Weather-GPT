@@ -25,21 +25,19 @@ as well as both an 8 hour, and 5 day forecast.
 
 # To-Do
 
-1. impliment the Open AI api and feed information about the current location from the weather api to suggest activities
+1. build display components for the Open AI elements to be displayed on the dashboard
 
-2. build display components for the Open AI elements to be displayed on the dashboard
+2. impliment the Recharts react library to display temperature information in graph format
 
-3. add unit tests and integration tests for the application
+3. add a map to the dashboard to display the location of the city searched for
 
-4. impliment the Recharts react library to display temperature information in graph format
+4. add a search history to the dashboard to allow users to quickly search for previously searched cities
 
-5. add a map to the dashboard to display the location of the city searched for
+5. add a favourites list to the dashboard to allow users to save their favourite cities
 
-6. add a search history to the dashboard to allow users to quickly search for previously searched cities
+6. add a settings page to the dashboard to allow users to change the theme of the application and units of measurement
 
-7. add a favourites list to the dashboard to allow users to save their favourite cities
-
-8. add a settings page to the dashboard to allow users to change the theme of the application and units of measurement
+7. add unit tests and integration tests for the application
 
 # Completed
 
@@ -53,15 +51,15 @@ as well as both an 8 hour, and 5 day forecast.
 
 5. build the basic 5 day forecast functionality for the application
 
+6. impliment the Open AI api and feed information about the current location from the weather api to suggest activities
+
 # Known Bugs
 
-1. The search bar does not clear after a search is made, and the user must manually clear the search bar to make another search
+1. The search function does not work if the user presses enter, and the user must click the search button to make a search
 
-2. The search function does not work if the user presses enter, and the user must click the search button to make a search
+2. Very little error catching for incorrect user input is implemented, and the application will crash if the user enters incorrect input
 
-3. Very little error catching for incorrect user input is implemented, and the application will crash if the user enters incorrect input
-
-4. The application is not responsive, and will not display correctly on mobile devices
+3. The application is not responsive, and will not display correctly on mobile devices
 
 
 
