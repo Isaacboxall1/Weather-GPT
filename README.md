@@ -25,19 +25,20 @@ as well as both an 8 hour, and 5 day forecast.
 
 # To-Do
 
-1. build display components for the Open AI elements to be displayed on the dashboard
+1. Refactor Code to make it more readable and maintainable
 
-2. impliment the Recharts react library to display temperature information in graph format
+2. add unit tests and integration tests for the application
 
-3. add a map to the dashboard to display the location of the city searched for
+3. impliment the Recharts react library to display temperature information in graph format
 
-4. add a search history to the dashboard to allow users to quickly search for previously searched cities
+4. add a map to the dashboard to display the location of the city searched for
 
-5. add a favourites list to the dashboard to allow users to save their favourite cities
+5. add a search history to the dashboard to allow users to quickly search for previously searched cities
 
-6. add a settings page to the dashboard to allow users to change the theme of the application and units of measurement
+6. add a favourites list to the dashboard to allow users to save their favourite cities
 
-7. add unit tests and integration tests for the application
+7. add a settings page to the dashboard to allow users to change the theme of the application and units of measurement
+
 
 # Completed
 
@@ -53,13 +54,17 @@ as well as both an 8 hour, and 5 day forecast.
 
 6. impliment the Open AI api and feed information about the current location from the weather api to suggest activities
 
+7. build display components for the Open AI elements to be displayed on the dashboard
+
 # Known Bugs
 
 1. The search function does not work if the user presses enter, and the user must click the search button to make a search
 
-2. Very little error catching for incorrect user input is implemented, and the application will crash if the user enters incorrect input
+2. Very little error catching for incorrect user input is implemented so far, and the application will crash if the user enters incorrect input
 
 3. The application is not responsive, and will not display correctly on mobile devices
+
+4. The AI responses are sometimes vague or do not take into account the weather. For example, if the weather is cold, the AI may suggest going to the beach.
 
 
 
