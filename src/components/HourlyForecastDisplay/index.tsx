@@ -1,4 +1,4 @@
-import {Hourly} from '../App/App'
+import {Hourly} from '../../utility/Interfaces/index'
 import {useState, useEffect} from 'react'
 import HourlyForecast from '../HourlyForecast'
 import { timeConverter } from '../CurrentWeatherDisplay'
@@ -9,6 +9,7 @@ interface hourlyForecast {
     temperature: number;
     icon: string;
 }
+
 export default function HourlyForecastDisplay (props: Hourly[]) {
 const [hourlyForecast, setHourlyForecast] = useState<[] | hourlyForecast[]>([])
 

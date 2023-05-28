@@ -8,20 +8,19 @@ formatAndCall: () => void;
 export default function GPTInterface (props: GPTInterfaceProps) {
 const {aiResponse, formatAndCall} = props
 
-function formatResponse(aiResponse: string) {
-    // Split the input string and trim the first two characters off each item
-    let responseArray = aiResponse.split('ActivityTitle').map(item => item.slice(2));
-    
-    // Create arrays for titles and descriptions by splitting each item at the first colon
-    let titles = responseArray.map(item => item.slice(0, item.indexOf(':')));
-    let descriptions = responseArray.map(item => item.slice(item.indexOf(':') + 1));
-    
-    // Combine the titles and descriptions into an array of objects
-    let combinedArray = titles.map((title, index) => ({ title, description: descriptions[index] })).splice(1, titles.length);
-    
-    
+function formatResToObj (apiResponse: string) {
+    const activities = apiResponse.split('\n').map((activity) => {
+        const [numberAndTitle, ...descriptionParts] = activity.split(':');
+        const [, title] = numberAndTitle.split('.');
+        const description = descriptionParts.join(':').trim();
+        return {title: title.trim(), description};
+    });
+    return activities;
+}
 
-    // Map over combinedArray to create the formattedResponse
+function ConvertObjToJsx(aiResponse: string) {
+    let combinedArray = formatResToObj(aiResponse)
+    console.log(combinedArray)
     let formattedResponse = combinedArray.map(({ title, description }, index) => (
         <div key={index} className="suggestion-card">
             <h2>{title}</h2>
@@ -33,12 +32,12 @@ function formatResponse(aiResponse: string) {
 
 
 function conditionalRender() {
-    if (aiResponse && aiResponse.includes('ActivityTitle1:')) {
+    if (aiResponse && aiResponse.includes('1.')) {
         return (
             <>
             <div id="response-card">
             <div id="responses">
-            {formatResponse(aiResponse)}
+            {ConvertObjToJsx(aiResponse)}
             </div>
             </div>
             </>

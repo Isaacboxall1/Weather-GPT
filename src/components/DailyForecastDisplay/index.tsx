@@ -1,4 +1,4 @@
-import { Daily } from '../App/App'
+import { Daily } from '../../utility/Interfaces/index'
 import { useState, useEffect } from 'react'
 import { timeConverter, dateConverter } from '../CurrentWeatherDisplay'
 import DailyForecast from '../DailyForecast'

@@ -1,5 +1,4 @@
-import {Current} from '../App/App'
-import { useEffect, useState } from 'react'
+import {Current} from '../../utility/Interfaces/index'
 import './currentweatherdisplay.css'
 
 export function timeConverter (unixdate:number): string {

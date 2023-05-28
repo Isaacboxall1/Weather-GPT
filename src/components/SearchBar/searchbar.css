@@ -25,13 +25,15 @@
 }
 
 #searchbar button:hover {
-    background-color: #66f36d;
+    background-image: linear-gradient(to right, #fd1e43 0%, #551d65 100%);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     color: #ffffff;
     scale: 0.95;
 }
 
 #searchbar button:active {
-    background-color: #14ee1f;
+    background-image: linear-gradient(to right, #fd1e43 0%, #551d65 100%);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     color: #ffffff;
     scale: 0.9;
 }

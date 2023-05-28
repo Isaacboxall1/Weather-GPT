@@ -1,15 +1,21 @@
 // setAIresponse: (value:string)=>void
-import {Hourly} from '../App/App'
+import {Hourly} from '../../utility/Interfaces/index'
 import { timeConverter } from '../CurrentWeatherDisplay'
 const openAiKey = process.env.REACT_APP_OPENAI_KEY
 
 export async function callGPT(location: string, forecast: string): Promise<string> {
-    const message = `Given the Weather in ${location} is forecast to be ${forecast}, suggest THREE activities to do in ${location} that are appropriate for the weather. suggest specific locations. follow the format of ActivityTitle1: description: ActivityTitle2: description: ActivityTitle3: description:`
+    const message = `Given the current weather forecast in ${location} being ${forecast},reference specific locations if appropriate to the activity, I need suggestions for three activities appropriate for this weather. Please provide the activity name followed by a brief description. Format your response like this:
+
+    1. Activity Name: Brief description.
+    2. Activity Name: Brief description.
+    3. Activity Name: Brief description.
+    `
+    
     let apiResponse = ''
     const APIBody = {
       "model": "gpt-3.5-turbo",
       "messages": [{"role": "user", "content": `${message}`}],
-      "temperature": 0.4,
+      "temperature": 0.3,
       "max_tokens": 250,
     }
     // setAIresponse('loading...')
@@ -24,6 +30,7 @@ export async function callGPT(location: string, forecast: string): Promise<strin
       return data.json()
     }).then((data) => {
       apiResponse = data.choices[0].message.content
+      console.log(apiResponse)
     })
     return apiResponse
   }
