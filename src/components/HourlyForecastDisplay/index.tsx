@@ -9,6 +9,7 @@ interface hourlyForecast {
     temperature: number;
     icon: string;
 }
+
 export default function HourlyForecastDisplay (props: Hourly[]) {
 const [hourlyForecast, setHourlyForecast] = useState<[] | hourlyForecast[]>([])
 
