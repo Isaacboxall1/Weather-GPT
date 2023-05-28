@@ -13,25 +13,35 @@ function App() {
   const [locationName, setLocationName] = useState<string>('London')
   const [aiResponse, setAiResponse] = useState<string>('')
 
-  async function updateRequest(locationName: string) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=${WeatherApiKey}`)
-    .then(data => data.json())
-    .then(data => {
-      setLocationName(data.name)
-      return data;
-  })
-    .then(data => (setWeatherRequest(`https://api.openweathermap.org/data/3.0/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=metric&APPID=${WeatherApiKey}`)))
+  async function updateRequestUrl(locationName: string) {
+    let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=${WeatherApiKey}`)
+    let data = await res.json()
+    setLocationName(data.name)
+    setWeatherRequest(`https://api.openweathermap.org/data/3.0/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=metric&APPID=${WeatherApiKey}`)
+  }
+
+  interface updateWeatherInfoprops {
+    weatherRequest: string
+    locationName: string
+    setWeatherInfo: (value: Weather) => void
+    setAiResponse: (value: string) => void
+  }
+
+  async function updateWeatherInfo(args: updateWeatherInfoprops) {
+    try {let {weatherRequest, locationName, setWeatherInfo, setAiResponse} = args
+    let res = await fetch(weatherRequest)
+    let data = await res.json()
+    data.locationName = locationName
+    setWeatherInfo(data)
+    setAiResponse('')}
+    
+    catch(error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
-    fetch(weatherRequest)
-      .then(response => response.json())
-      .then(data => {
-        data.locationName = locationName
-        setWeatherInfo(data)
-        setAiResponse('')
-      })
-      .catch(error => console.error(error));
+    updateWeatherInfo({weatherRequest, locationName, setWeatherInfo, setAiResponse})
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weatherRequest]);
 
@@ -47,7 +57,7 @@ async function formatAndCall() {
 
   return (
     <div className="App">
-      <SearchBar updateRequest= {updateRequest} />
+      <SearchBar updateRequest={updateRequestUrl} />
       <div id="weather-display">
         {weatherInfo != null ? <DisplayCard {...weatherInfo}/> : null}
     </div>
