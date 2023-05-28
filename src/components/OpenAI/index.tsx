@@ -1,5 +1,5 @@
 // setAIresponse: (value:string)=>void
-import {Hourly} from '../App/App'
+import {Hourly} from '../../utility/Interfaces/index'
 import { timeConverter } from '../CurrentWeatherDisplay'
 const openAiKey = process.env.REACT_APP_OPENAI_KEY
 

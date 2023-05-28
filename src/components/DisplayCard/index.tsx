@@ -1,4 +1,4 @@
-import {Weather} from "../App/App";
+import {Weather} from "../../utility/Interfaces";
 import './displaycard.css'
 import CurrentWeatherDisplay from "../CurrentWeatherDisplay";
 import HourlyForecastDisplay from "../HourlyForecastDisplay";
