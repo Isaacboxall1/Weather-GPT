@@ -1,5 +1,6 @@
 import MorphSpinner from "../MorphSpinner";
 import './gptinterface.css'
+import formatResToObj from "../../utility/formatResToObj";
 interface GPTInterfaceProps {
 aiResponse: string;
 formatAndCall: () => void;
@@ -8,20 +9,12 @@ formatAndCall: () => void;
 export default function GPTInterface (props: GPTInterfaceProps) {
 const {aiResponse, formatAndCall} = props
 
-function formatResToObj (apiResponse: string) {
-    const activities = apiResponse.split('\n').map((activity) => {
-        const [numberAndTitle, ...descriptionParts] = activity.split(':');
-        const [, title] = numberAndTitle.split('.');
-        const description = descriptionParts.join(':').trim();
-        return {title: title, description};
-    });
-    return activities;
-}
+
 
 function ConvertObjToJsx(aiResponse: string) {
     let combinedArray = formatResToObj(aiResponse)
     console.log(combinedArray)
-    let formattedResponse = combinedArray.map(({ title, description }, index) => (
+    let formattedResponse = combinedArray.filter((activity) => activity.title !== undefined).map(({ title, description }, index) => (
         <div key={index} className="suggestion-card">
             <h2>{title}</h2>
             <p>{description}</p>
