@@ -13,7 +13,6 @@ const {aiResponse, formatAndCall} = props
 
 function ConvertObjToJsx(aiResponse: string) {
     let combinedArray = formatResToObj(aiResponse)
-    console.log(combinedArray)
     let formattedResponse = combinedArray.filter((activity) => activity.title !== undefined).map(({ title, description }, index) => (
         <div key={index} className="suggestion-card">
             <h2>{title}</h2>
